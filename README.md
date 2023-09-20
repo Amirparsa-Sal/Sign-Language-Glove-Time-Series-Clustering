@@ -24,6 +24,32 @@ The steps I've done so far are as follows:
 
 2. **Normalization**: To get a suitable result, I normalized the value of features to the range of [0, 1]. If we don't do this process, some features that can take large values will affect the clustering process more than other features which is not desired.
 
-3. **Clustering**: I performed the clustering on data. On one hand, I tried to cluster the data belonging to a specific recorder and I got a very good result and almost all data were clustered accurately. On the other hand, when I mixed the data of different recorders together the result got worse significantly and mixing the data had an adverse effect on the outcome of clustering. This might be due to the fact that the recorders were not professional in Persian Sign Langauge and they were typical students. In other words, each student has its own style of signing the words and this leads to a considerable variation in data.
+3. **Clustering**: I performed the clustering on data. On one hand, I tried to cluster the data belonging to a specific recorder and I got a very good result and almost all data were clustered accurately. 
+   
+   Here is the purity of clusters for a single recorder data:
+   
+   ![](./images/purity-of-clusters-single-recorder.png)
+   
+   And this is the distribution of different words (classes) in clusters:
+   
+   ![](./images/distribution-of-labels-single-recorder.png)
+   
+   On the other hand, when I mixed the data of different recorders together the result got worse significantly and mixing the data had an adverse effect on the outcome of clustering. This might be due to the fact that the recorders were not professional in Persian Sign Langauge and they were typical students. In other words, each student has its own style of signing the words and this leads to a considerable variation in data.
+   
+   Here is the purity of clusters for all recorders data:
+   
+   ![](./images/purity-of-clusters-all-recorders.png)
+   
+   And this is the distribution of different words (classes) in clusters:
+   
+   ![](./images/distribution-of-labels-all-recorders.png)
 
 4. **Observing Similiarities**: Because of the negative effect of mixing the data of all recorders, I plotted the data of a single word which was belonged to one of the recorders and then I sampled a data from all recorders with the same class. While In the former the data were almost the same, in the latter a considerable difference between the data was seen. As a result, the outcome of clustering section makes sense.
+   
+   Some samples from a single word belonging to a single recorder:
+   
+   ![](./images/observe-similarities-single-recorder.png)
+   
+   Some samples (1 from each recorder) from a single word belonging to multiple recorders:
+   
+   ![](./images/observe-similarities-all-recorders.png)
